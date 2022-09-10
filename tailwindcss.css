@@ -35,6 +35,8 @@
     }
 }
 
-.black-button {
-    color: white;
+@media (min-width: 840px) {
+    .black-button {
+        @apply text-white
+    }
 }

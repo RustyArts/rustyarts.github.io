@@ -589,6 +589,11 @@ video {
   display: block;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -665,6 +670,9 @@ video {
   }
 }
 
-.black-button {
-  color: white;
+@media (min-width: 840px) {
+  .black-button {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
 }

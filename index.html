@@ -44,7 +44,8 @@
                     <div class="center-text text-white large-spacing ">
                         <span class="shadow-text jumbo-font-size">Welcome To Rusty Arts</span><br>
                         <div class="regular-font-size visible-text ">
-                            <a href="javascript:void(0)" class="text_shadows" onclick="onTutorialsClick(this)">Tutorials</a>
+                            <a href="javascript:void(0)" class="text_shadows"
+                               onclick="onTutorialsClick(this)">Tutorials</a>
                             <span>|</span>
                             <div class="services"><a href="#">Services</a></div>
                         </div>
@@ -72,9 +73,10 @@
         </a>
     </div>
     <span id="close_popup"
-          class="button-style finger-mouse display-top-right black-button popup-icon padding-large jumbo-font-size-screen-independent"
+          class="button-style finger-mouse display-top-right black-button popup-icon padding-large text-5xl"
           title="Close PopUp" onclick="onClosePopUp(this)">×</span>
-    <div id="popup-container" class="popup-container popup-out finger-mouse popup-font"> <!--make the container horizontal on smaller screens --check-->
+    <div id="popup-container" class="popup-container popup-out finger-mouse popup-font">
+        <!--make the container horizontal on smaller screens --check-->
         <div class="center-contents bgimg-coding-tut gray-scale half-width popup grow-on-hover">
             <div class="light-border gray-low-opacity vertical-center popup-box-size padding-large">
                 <h1 class="popup-font-weight">Programming Tutorials<br></h1>
@@ -97,16 +99,19 @@
 
 <script>
     const homepagePopup = document.getElementById("homepage_popup")
+
     function onTutorialsClick(element) {
         //show pop up
         homepagePopup.style.display = "block"
     }
+
     function onClosePopUp(element) {
         // remove zoom in animation
         // add zoom out animation
         homepagePopup.classList.add("animate-zoom-out")
         homepagePopup.addEventListener("animationend", resetHomepage)
     }
+
     function resetHomepage() {
         homepagePopup.style.display = "none"
         homepagePopup.classList.remove("animate-zoom-out")
