@@ -654,7 +654,7 @@ video {
   line-height: 1.75rem;
 }
 
-@media (max-width: 840px) {
+@media (max-width: 992px) {
   .popup-out {
     flex-wrap: wrap;
   }
