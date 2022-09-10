@@ -110,13 +110,13 @@
         //show pop up
         homepagePopup.style.display = "block"
         //register back button to close pop up
-        document.addEventListener("backbutton", onBackKeyDown, true);
+        document.addEventListener("backbutton", onBackKeyDown);
     }
 
     function onClosePopUp() {
         // remove zoom in animation
         // add zoom out animation
-        console.log("closing without pop true") //remove
+        console.log("closing without pop false") //remove
         homepagePopup.classList.add("animate-zoom-out")
         homepagePopup.addEventListener("animationend", resetHomepage)
     }
