@@ -687,3 +687,19 @@ $primarycolour: rgb(94, 94, 94);
 .popup-font-weight {
   font-weight: 1000;
 }
+@media (max-width: 840px) {
+  .popup-out {
+    flex-wrap: wrap;
+  }
+  .popup {
+    width: 100%;
+    height: 50%;
+  }
+  .black-button {
+    color: black;
+  }
+}
+
+.black-button {
+  color: white;
+}
