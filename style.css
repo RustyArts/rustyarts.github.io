@@ -594,5 +594,8 @@ body {
     transform: scale(0);
   }
 }
+.popup-font-weight {
+  font-weight: 1000;
+}
 
 /*# sourceMappingURL=style.css.map */

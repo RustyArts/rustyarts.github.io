@@ -639,7 +639,17 @@ video {
   padding: 0.25rem;
 }
 
-@media (max-width: 700px) {
+.popup-font h1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.popup-font p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+@media (max-width: 840px) {
   .popup-out {
     flex-wrap: wrap;
   }
