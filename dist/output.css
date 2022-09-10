@@ -619,6 +619,8 @@ video {
   .nav-right-font {
     font-size: 1.25rem;
     line-height: 1.75rem;
+    padding: 0.5rem;
+    padding-top: 1rem;
   }
 }
 

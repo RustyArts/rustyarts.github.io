@@ -7,6 +7,7 @@
 }
 .nav-right-font {
     @apply text-sm md:text-xl;
+    @apply md:p-2 md:pt-4
 }
 .nav-right-font a {
     @apply p-1.5
