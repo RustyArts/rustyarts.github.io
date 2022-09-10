@@ -15,7 +15,7 @@
     @apply p-1
 }
 
-@media (max-width: 840px) {
+@media (max-width: 992px) {
     .popup-out {
         flex-wrap: wrap;
     }
@@ -34,7 +34,7 @@
     font-size: 1.3em !important;
 }
 
-@media (min-width: 840px) {
+@media (min-width: 992px) {
     .black-button {
         @apply text-white
     }
