@@ -83,7 +83,7 @@
                 <p>Learn How to Write Readable And Maintainable Code!</p>
             </div>
         </div>
-        <div class="center-contents  bgimg-photo-tut gray-scale half-width popup grow-on-hover">
+        <div class="center-contents bgimg-photo-tut gray-scale half-width popup grow-on-hover">
             <div class="light-border gray-low-opacity vertical-center popup-box-size padding-large">
                 <h1><strong>Photoshop Tutorials <br></strong></h1>
                 <p>Become A Professional With These Photoshop Tips & Tricks!</p>
@@ -100,9 +100,16 @@
 <script>
     const homepagePopup = document.getElementById("homepage_popup")
 
+    function onBackKeyDown() {
+        onClosePopUp(document.getElementsByClassName("close_popup"))
+        document.removeEventListener("backbutton",onBackKeyDown)
+    }
+
     function onTutorialsClick(element) {
         //show pop up
         homepagePopup.style.display = "block"
+        //register back button to close pop up
+        document.addEventListener("backbutton", onBackKeyDown, false);
     }
 
     function onClosePopUp(element) {
