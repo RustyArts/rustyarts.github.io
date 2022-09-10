@@ -617,8 +617,7 @@ video {
 
 @media (min-width: 768px) {
   .nav-right-font {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 1.7rem;
     padding: 0.5rem;
     padding-top: 1rem;
   }
