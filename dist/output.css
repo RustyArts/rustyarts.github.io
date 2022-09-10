@@ -609,3 +609,8 @@ video {
     width: 33.333333%;
   }
 }
+
+.nav-right-font {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
