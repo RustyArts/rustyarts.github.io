@@ -600,17 +600,27 @@ video {
 
 @media (min-width: 768px) {
   .logo-adaptation {
-    width: 66.666667%;
+    width: 50%;
   }
 }
 
 @media (min-width: 1280px) {
   .logo-adaptation {
-    width: 33.333333%;
+    width: 40%;
   }
 }
 
 .nav-right-font {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .nav-right-font {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+.nav-right-text-padding {
 }
