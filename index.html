@@ -99,24 +99,23 @@
 
 <script>
     const homepagePopup = document.getElementById("homepage_popup")
+    document.addEventListener("backbutton", onBackKeyDown);
 
     function onBackKeyDown() {
         onClosePopUp()
         console.log("back presed")
-        document.removeEventListener("backbutton", onBackKeyDown)
     }
 
     function onTutorialsClick(element) {
         //show pop up
         homepagePopup.style.display = "block"
         //register back button to close pop up
-        document.addEventListener("backbutton", onBackKeyDown);
     }
 
     function onClosePopUp() {
         // remove zoom in animation
         // add zoom out animation
-        console.log("closing without pop false") //remove
+        console.log("closing without pop test") //remove
         homepagePopup.classList.add("animate-zoom-out")
         homepagePopup.addEventListener("animationend", resetHomepage)
     }
