@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .logo-adaptation {
-    @apply w-2/6 sm:w-5/12
+    @apply w-2/6 sm:w-2/12
 }
