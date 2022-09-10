@@ -78,15 +78,15 @@
     <div id="popup-container" class="popup-container popup-out finger-mouse popup-font">
         <!--make the container horizontal on smaller screens --check-->
         <div class="center-contents bgimg-coding-tut gray-scale half-width popup grow-on-hover">
-            <div class="light-border gray-low-opacity vertical-center popup-box-size padding-large">
-                <h1 class="popup-font-weight legible-text">Programming Tutorials<br></h1>
-                <p>Learn How to Write Readable And Maintainable Code!</p>
+            <div class="light-border gray-low-opacity vertical-center  popup-box-size padding-large">
+                <h1 class="popup-font-weight legible-text-header ">Programming Tutorials<br></h1>
+                <p class="legible-text-body">Learn How to Write Readable And Maintainable Code!</p>
             </div>
         </div>
         <div class="center-contents bgimg-photo-tut gray-scale half-width popup grow-on-hover">
             <div class="light-border gray-low-opacity vertical-center popup-box-size padding-large">
-                <h1><strong>Photoshop Tutorials <br></strong></h1>
-                <p>Become A Professional With These Photoshop Tips & Tricks!</p>
+                <h1 class="legible-text-header"><strong>Photoshop Tutorials</strong></h1>
+                <p class="legible-text-body">Become A Professional With These Photoshop Tips & Tricks!</p>
             </div>
         </div>
     </div>
@@ -115,7 +115,7 @@
     function onClosePopUp() {
         // remove zoom in animation
         // add zoom out animation
-        console.log("closing jhj pop") //remove
+        console.log("closing without pop") //remove
         homepagePopup.classList.add("animate-zoom-out")
         homepagePopup.addEventListener("animationend", resetHomepage)
     }

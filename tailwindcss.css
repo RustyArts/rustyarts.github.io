@@ -15,13 +15,6 @@
     @apply p-1
 }
 
-.popup-font h1 {
-    @apply text-3xl;
-}
-.popup-font p {
-    @apply text-lg;
-}
-
 @media (max-width: 840px) {
     .popup-out {
         flex-wrap: wrap;
@@ -33,17 +26,17 @@
     .black-button {
         @apply text-black
     }
-
-    .legible-text {
-        font-size: 40vw;
-    }
+}
+.legible-text-header {
+    font-size: 2em !important;
+}
+.legible-text-body {
+    font-size: 1.3em !important;
 }
 
 @media (min-width: 840px) {
     .black-button {
         @apply text-white
-    }
-    .legible-text {
     }
 }
 
