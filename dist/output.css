@@ -618,6 +618,18 @@ video {
 @media (min-width: 768px) {
   .nav-right-font {
     font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-right-font {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-right-font {
     padding: 0.5rem;
     padding-top: 1rem;
   }
