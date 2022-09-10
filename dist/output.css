@@ -589,8 +589,8 @@ video {
   display: block;
 }
 
-.text-5xl {
-  font-size: 3rem;
+.text-7xl {
+  font-size: 4.5rem;
   line-height: 1;
 }
 
@@ -654,7 +654,7 @@ video {
   line-height: 1.75rem;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 840px) {
   .popup-out {
     flex-wrap: wrap;
   }
@@ -668,6 +668,10 @@ video {
     --tw-text-opacity: 1;
     color: rgb(0 0 0 / var(--tw-text-opacity));
   }
+
+  .legible-text {
+    font-size: 40vw;
+  }
 }
 
 @media (min-width: 840px) {
@@ -675,4 +679,14 @@ video {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
+
+  .legible-text {
+  }
+}
+
+.button-pad {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 4rem;
+  padding-left: 4rem;
 }

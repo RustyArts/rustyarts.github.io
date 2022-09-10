@@ -516,7 +516,11 @@ body {
 }
 
 .padding-large {
-  padding: 12px 24px !important;
+  padding: 12px 20px !important;
+}
+
+.tets {
+  padding: 12px 4px;
 }
 
 .jumbo-font-size-screen-independent {

@@ -73,13 +73,13 @@
         </a>
     </div>
     <span id="close_popup"
-          class="button-style finger-mouse display-top-right black-button popup-icon padding-large text-5xl"
+          class="button-style finger-mouse display-top-right black-button popup-icon button-pad text-7xl"
           title="Close PopUp" onclick="onClosePopUp()">×</span>
     <div id="popup-container" class="popup-container popup-out finger-mouse popup-font">
         <!--make the container horizontal on smaller screens --check-->
         <div class="center-contents bgimg-coding-tut gray-scale half-width popup grow-on-hover">
             <div class="light-border gray-low-opacity vertical-center popup-box-size padding-large">
-                <h1 class="popup-font-weight">Programming Tutorials<br></h1>
+                <h1 class="popup-font-weight legible-text">Programming Tutorials<br></h1>
                 <p>Learn How to Write Readable And Maintainable Code!</p>
             </div>
         </div>
@@ -115,7 +115,7 @@
     function onClosePopUp() {
         // remove zoom in animation
         // add zoom out animation
-        console.log("closing","pop") //remove
+        console.log("closing jhj pop") //remove
         homepagePopup.classList.add("animate-zoom-out")
         homepagePopup.addEventListener("animationend", resetHomepage)
     }
