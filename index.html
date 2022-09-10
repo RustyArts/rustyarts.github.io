@@ -101,7 +101,7 @@
     const homepagePopup = document.getElementById("homepage_popup")
 
     function onBackKeyDown() {
-        onClosePopUp(document.getElementsByClassName("close_popup"))
+        onClosePopUp(document.getElementById("close_popup"))
         document.removeEventListener("backbutton",onBackKeyDown)
     }
 
@@ -115,6 +115,7 @@
     function onClosePopUp(element) {
         // remove zoom in animation
         // add zoom out animation
+        console.log("closing","pop") //remove
         homepagePopup.classList.add("animate-zoom-out")
         homepagePopup.addEventListener("animationend", resetHomepage)
     }
