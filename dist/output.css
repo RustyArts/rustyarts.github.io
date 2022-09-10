@@ -595,11 +595,11 @@ video {
 }
 
 .logo-adaptation {
-  width: 33.333333%;
+  width: 66.666667%;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1280px) {
   .logo-adaptation {
-    width: 75%;
+    width: 33.333333%;
   }
 }
