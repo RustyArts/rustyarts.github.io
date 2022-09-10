@@ -74,7 +74,7 @@
     </div>
     <span id="close_popup"
           class="button-style finger-mouse display-top-right black-button popup-icon padding-large text-5xl"
-          title="Close PopUp" onclick="onClosePopUp(this)">×</span>
+          title="Close PopUp" onclick="onClosePopUp()">×</span>
     <div id="popup-container" class="popup-container popup-out finger-mouse popup-font">
         <!--make the container horizontal on smaller screens --check-->
         <div class="center-contents bgimg-coding-tut gray-scale half-width popup grow-on-hover">
@@ -101,7 +101,7 @@
     const homepagePopup = document.getElementById("homepage_popup")
 
     function onBackKeyDown() {
-        onClosePopUp(document.getElementById("close_popup"))
+        onClosePopUp()
         document.removeEventListener("backbutton",onBackKeyDown)
     }
 
@@ -109,10 +109,10 @@
         //show pop up
         homepagePopup.style.display = "block"
         //register back button to close pop up
-        document.addEventListener("backbutton", onBackKeyDown, false);
+        document.addEventListener("backbutton", onBackKeyDown);
     }
 
-    function onClosePopUp(element) {
+    function onClosePopUp() {
         // remove zoom in animation
         // add zoom out animation
         console.log("closing","pop") //remove
