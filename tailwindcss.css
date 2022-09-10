@@ -22,7 +22,7 @@
     @apply text-lg;
 }
 
-@media (max-width: 840px) {
+@media (max-width: 84   0px) {
     .popup-out {
         flex-wrap: wrap;
     }
