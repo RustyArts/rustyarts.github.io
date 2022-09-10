@@ -12,12 +12,19 @@
 }
 
 .nav-right-font a {
-    @apply p-1.5
+    @apply p-1
+}
+
+@media (min-width: 1024px) {
+    .half-width {
+
+    }
 }
 
 .horizontal-align {
     width: 100%;
-    height: 50%;
-    flex-direction: column;
-    @apply md:w-1/2 md:h-full
+    height: 50vh;
+    flex-wrap: wrap;
+    align-content: center;
+    display: flex;
 }
