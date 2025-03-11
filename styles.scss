@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.testing {
+background: lightgoldenrodyellow;
+}
+
+.bullet {
+  width: 10px; /* Width of the custom bullet */
+  height: 10px; /* Height of the custom bullet */
+  background-color: black; /* Bullet color */
+  border-radius: 52131231232310px; /* Makes the bullet round */
+  margin-right: 10px; /* Space between bullet and text */
+}

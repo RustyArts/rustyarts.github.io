@@ -1,0 +1,10 @@
+[package]
+name = "resume"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+derive_more = { version = "2.0.1", features = ["display"] }
+yew = { git = "https://github.com/yewstack/yew/", features = ["csr"] }
+yew-autoprops = {git = "https://github.com/yewstack/yew-autoprops.git"}
+web-sys = "0.3"
