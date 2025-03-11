@@ -31,23 +31,40 @@ fn ExperienceItem(
     heading: AttrValue,
     subtitle: AttrValue,
     text: AttrValue,
+    link: Option<AttrValue>,
 ) -> Html {
-    html! {
-        <div class ="flex flex-row space-x-1">
-            <div class ="flex flex-col flex-none w-64">
-                <p class="text-slate-400 text-sm">
-                    <time datetime={timeline.start_datetime.clone()}>{&timeline.start}</time>
-                    {" - "}
-                    <time datetime={timeline.end_datetime.clone()}>{&timeline.end}</time>
-                </p>
-                <div class ="flex flex-row space-x-4 mt-1">
-                    <img class ="size-10 min-w-8 rounded-md" src={img_src} />
-                    <div class ="flex flex-col">
-                        <p class="text-slate-500 text-[13px]"> {heading}</p>
-                        <p class="text-stone-950 text-sm"> {subtitle}</p>
-                    </div>
+    let content = html! {
+        <>
+            <p class="text-slate-400 text-sm">
+                <time datetime={timeline.start_datetime.clone()}>{&timeline.start}</time>
+                {" - "}
+                <time datetime={timeline.end_datetime.clone()}>{&timeline.end}</time>
+            </p>
+            <div class ="flex flex-row space-x-4 mt-1">
+                <img class ="size-10 min-w-8 rounded-md" src={img_src} />
+                <div class ="flex flex-col">
+                    <p class="text-slate-500 text-[13px]"> {heading}</p>
+                    <p class="text-stone-950 text-sm"> {subtitle}</p>
                 </div>
             </div>
+        </>
+    };
+    html! {
+        <div class ="flex flex-row space-x-1">
+            {
+                match link {
+                    Some(link) => html! {
+                        <a class ="flex flex-col flex-none w-64" href={link} target="_blank">
+                            {content}
+                        </a>
+                    },
+                    None => html! {
+                        <div class ="flex flex-col flex-none w-64">
+                            {content}
+                        </div>
+                    }
+                }
+            }
             <p class="text-slate-500 text-xs">{text}</p>
         </div>
     }
@@ -162,7 +179,19 @@ impl ExperienceDetails {
                 heading = {self.heading()}
                 subtitle = {self.subtitle()}
                 text = {self.text()}
+                link = {self.links()}
             />
+        }
+    }
+
+    fn links(self) -> Option<AttrValue> {
+        match self {
+            ExperienceDetails::Voiceban => None,
+            ExperienceDetails::Medium => Some("https://medium.com/@otukof".into()),
+            ExperienceDetails::Upwork => Some(
+                "https://www.upwork.com/freelancers/~0196d30a485de56f48?mp_source=share".into(),
+            ),
+            ExperienceDetails::Assistant => None,
         }
     }
 }
