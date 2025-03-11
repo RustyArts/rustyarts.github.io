@@ -39,7 +39,7 @@ fn SkillItem(text: AttrValue, color: AttrValue) -> Html {
 fn Section<T: Display + Details + PartialEq>() -> Html {
     html! {
         <div class="flex flex-row space-x-14">
-            <div class="flex flex-col space-y-2 w-20">
+            <div class="flex flex-col space-y-px w-20">
                 <div class={format!("size-8 {} rounded-full text-xs flex items-center justify-center", T::color().0)}>
                     <img src= {T::img_src()} alt="languages icon" class="size-4"/>
                 </div>

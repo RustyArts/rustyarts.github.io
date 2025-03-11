@@ -55,20 +55,28 @@ fn HorizontalDivider() -> Html {
 #[autoprops]
 #[function_component]
 fn LinksItem(link: &Links) -> Html {
-    html! {
-        <a href={link.href()} target="_blank">
-            <div class="flex flex-row items-center space-x-4">
-                {if matches!(link, Links::Socials(_) | Links::Languages(_)) {
-                    link.img()
-                } else {
-                    html!(<AsideLinksImg link = {*link} />)}
-                }
-                <div class="flex flex-col">
-                    <p class="text-slate-500 text-sm">{link.to_string()}</p>
-                    <p class="text-slate-700 text-sm">{link.text()}</p>
-                </div>
+    let content = html! {
+        <div class="flex flex-row items-center space-x-4">
+            {if matches!(link, Links::Socials(_) | Links::Languages(_)) {
+                link.img()
+            } else {
+                html!(<AsideLinksImg link = {*link} />)}
+            }
+            <div class="flex flex-col">
+                <p class="text-slate-500 text-sm">{link.to_string()}</p>
+                <p class="text-slate-700 text-sm">{link.text()}</p>
             </div>
-        </a>
+        </div>
+    };
+    if link.href().is_empty() {
+        content
+    } else {
+        html! {
+            <a href={link.href()} target="_blank">
+                {content}
+            </a>
+
+        }
     }
 }
 

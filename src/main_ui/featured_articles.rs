@@ -15,7 +15,7 @@ pub fn FeaturedArticles() -> Html {
                     language that has been around for quite some time now. \
                     Being a systems..."}
                     img_src = {"assets/rust-android.webp"}
-                    link = {("https://levelup.gitconnected.com".into(),
+                    link = {("LevelUpCoding".into(),
                         "https://medium.com/gitconnected/integrating-rust-with-android-development-ef341c2f9cca".into())
                     }
                     border_radius = {"rounded-l-xl"}
@@ -25,7 +25,7 @@ pub fn FeaturedArticles() -> Html {
                     text = {"Ever wondered how to wirelessly transfer a file from your phone \
                     to your PC? In this beginner-friendly tutorial, we’ll learn how to use..."}
                     img_src = {"assets/sender-to-rec.webp"}
-                    link = {("https://levelup.gitconnected.com".into(),
+                    link = {("LevelUpCoding".into(),
                         "https://medium.com/gitconnected/from-sender-to-receiver-rusts-approach-to-local-file-transfers-e6a778020d90".into())
                     }
                 />
@@ -34,7 +34,7 @@ pub fn FeaturedArticles() -> Html {
                     text = {"Concurrency and parallel computing are hot topics in the world of \
                     software development. To be fair, this popularity is well deserved because..."}
                     img_src = {"assets/implementing-data-parallelism-rayon-rust.avif"}
-                    link = {("https://blog.logrocket.com".into(),
+                    link = {("LogRocket".into(),
                         "https://blog.logrocket.com/implementing-data-parallelism-rayon-rust/".into())
                     }
                     border_radius = {"rounded-r-xl"}
@@ -60,9 +60,9 @@ fn FeaturedArticle(
             />
             <div class="flex flex-col m-0 grow">
                 <p class="text-stone-950 m-0"> {heading} </p>
-                <p class="text-slate-500 text-sm"> {text} </p>
+                <p class="text-slate-500 text-sm line-clamp-3"> {text} </p>
             </div>
-            <div class="flex flex-row space-x-3 items-center text-indigo-500/90 font-bold">
+            <div class="flex flex-row space-x-3 items-center text-indigo-500/90 font-bold mt-2">
                 <div class="size-8 bg-indigo-100 rounded-full text-xs flex items-center justify-center">
                     {Links::Website.img()}
                 </div>
