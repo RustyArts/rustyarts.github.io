@@ -7,7 +7,7 @@ pub fn Aside() -> Html {
     html! {
         <div class="flex flex-col">
             <div class="flex flex-col">
-                <img src="assets/kofi.jpg" alt="kofi's picture" class="rounded-full size-28 grayscale-50 shadow-lg perspective-distant mb-4"/>
+                <img src="assets/kofi.jpg" alt="kofi's picture" class="rounded-full size-28 grayscale-60 shadow-lg perspective-distant mb-4"/>
                 <h2 class="text-2xl">{"Kofi Otuo"}</h2>
                 <p class="text-xl text-transparent bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-700 bg-clip-text">{"Full-Stack Developer"}</p>
             </div>
@@ -61,7 +61,7 @@ fn LinksItem(link: &Links) -> Html {
                 {if matches!(link, Links::Socials(_) | Links::Languages(_)) {
                     link.img()
                 } else {
-                    html!(<AsideLinksImg link = {link.clone()} />)}
+                    html!(<AsideLinksImg link = {*link} />)}
                 }
                 <div class="flex flex-col">
                     <p class="text-slate-500 text-sm">{link.to_string()}</p>

@@ -1,3 +1,4 @@
+#![allow(clippy::upper_case_acronyms)]
 use crate::main_ui::Header;
 use derive_more::Display;
 use std::fmt::Display;
