@@ -13,7 +13,7 @@ jobs:
       - name: Set up Rust
         run: rustup default nightly && rustup target add wasm32-unknown-unknown
       - name: Install Tailwind CLI
-        run: brew install tailwindcss
+        run: brew update && brew install tailwindcss
       - name: Install Trunk
         run: brew install tailwindcss && cargo install trunk
       - name: Build
