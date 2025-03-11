@@ -1,10 +1,10 @@
 use crate::main_ui::education::Education;
 use crate::main_ui::experience::Experience;
 use crate::main_ui::featured_articles::FeaturedArticles;
+use crate::main_ui::latest_projects::LatestProjects;
 use crate::main_ui::skills::Skills;
 use yew::{AttrValue, Html, function_component, html};
 use yew_autoprops::autoprops;
-use crate::main_ui::latest_projects::LatestProjects;
 
 mod education;
 mod experience;
