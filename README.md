@@ -26,8 +26,7 @@ I'm a passionate software engineer specializing in Rust and modern frontend deve
 
 ## Live Demo
 
-Experience my resume live:
-[Getting Started](#getting-started)
+Experience my resume live: https://rustyarts.github.io/
 ---
 
 ## Features
