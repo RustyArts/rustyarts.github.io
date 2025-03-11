@@ -15,7 +15,7 @@ jobs:
       - name: Install Tailwind CLI
         run: brew install tailwindcss
       - name: Install Trunk
-        run: cargo install trunk
+        run: brew install tailwindcss && cargo install trunk
       - name: Build
         run: trunk build --release
       - name: Deploy
