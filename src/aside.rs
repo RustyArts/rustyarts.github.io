@@ -227,25 +227,3 @@ fn AsideSocialImg(src: AttrValue) -> Html {
         <img {src} class="rounded-full size-7 object-fit"/>
     }
 }
-#[autoprops]
-#[function_component]
-fn LanguagesItem(name: AttrValue, value: AttrValue) -> Html {
-    html! {
-        <>
-            <div class="flex flex-row">
-                <img src="https://picsum.photos/200/300" alt="image" class="rounded-sm"/>
-                <div class="flex flex-col">
-                    <p>{name.clone()}</p>
-                    <p>{value.clone()}</p>
-                </div>
-            </div>
-            <div class="flex flex-row">
-                <img src="https://picsum.photos/200/300" alt="image" class="rounded-sm"/>
-                <div class="flex flex-col">
-                    <p>{name}</p>
-                    <p>{value}</p>
-                </div>
-            </div>
-        </>
-    }
-}
