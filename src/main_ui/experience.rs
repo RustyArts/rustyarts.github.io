@@ -160,7 +160,7 @@ impl ExperienceDetails {
             }
             ExperienceDetails::Upwork => {
                 "I've collaborated with diverse clients to deploy scalable systems using Rust, Android and Python. \
-                 I maintained 𝟭𝟬𝟬%client satisfaction through performance-driven development and \
+                 I maintained 𝟭𝟬𝟬% client satisfaction through performance-driven development and \
                  effective communication."
             }
             ExperienceDetails::Assistant => {
