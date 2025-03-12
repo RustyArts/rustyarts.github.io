@@ -17,9 +17,9 @@ pub fn Education() -> Html {
                 />
                 <School
                     name= {"University of Ghana"}
-                    text = {"MBChB"}
+                    text = {"Medical Sciences"}
                     img_src = {"assets/university-of-ghana-logo.svg"}
-                    time = {"2019 - 2025"}
+                    time = {"2019 - 2023"}
                     border_radius = {"rounded-r-xl"}
                 />
             </div>

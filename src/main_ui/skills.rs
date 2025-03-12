@@ -13,7 +13,6 @@ pub fn Skills() -> Html {
             <div class="flex flex-col space-y-3">
                 <Section<Language> />
                 <Section<WebFramework> />
-                <Section<Android> />
                 <Section<Desktop> />
                 <Section<Database> />
                 <Section<Blockchain> />
@@ -26,10 +25,11 @@ pub fn Skills() -> Html {
 
 #[autoprops]
 #[function_component]
-fn SkillItem(text: AttrValue, color: AttrValue) -> Html {
+fn SkillItem(text: AttrValue, years: AttrValue, color: AttrValue) -> Html {
     html! {
-        <div class="p-4 bg-slate-100 rounded-lg flex items-center justify-center text-sm">
+        <div class="p-4 bg-slate-100 rounded-lg flex flex-col items-center justify-center text-sm">
             <p class={color}>{text}</p>
+            <p class="text-xs text-slate-400">{format!("{}+ years",years)}</p>
         </div>
     }
 }
@@ -46,7 +46,8 @@ fn Section<T: Display + Details + PartialEq>() -> Html {
                 <p class="text-stone-950 text-sm">{T::section_text()}</p>
             </div>
             <div class="flex flex-row space-x-1">
-                {for T::items().into_iter().map(|language|html!(<SkillItem text={language.to_string()} color={T::color().1} />))}
+                {for T::items().into_iter()
+                    .map(|language|html!(<SkillItem years = {language.years()} text={language.to_string()} color={T::color().1} />))}
             </div>
         </div>
     }
@@ -71,6 +72,7 @@ enum WebFramework {
 }
 
 #[derive(Display, Copy, Clone, PartialEq)]
+#[allow(dead_code)]
 enum Android {
     JetpackCompose,
     Flutter,
@@ -124,6 +126,8 @@ trait Details {
     fn items() -> Vec<Self>
     where
         Self: Sized;
+
+    fn years(&self) -> AttrValue;
 }
 
 impl Details for WebFramework {
@@ -140,7 +144,17 @@ impl Details for WebFramework {
     }
 
     fn items() -> Vec<Self> {
-        vec![Self::Html, Self::ReactJS, Self::Yew, Self::Leptos]
+        vec![Self::Html, Self::Yew, Self::Leptos, Self::ReactJS]
+    }
+
+    fn years(&self) -> AttrValue {
+        match self {
+            WebFramework::Html => "3",
+            WebFramework::Yew => "3",
+            WebFramework::Leptos => "1",
+            WebFramework::ReactJS => "1",
+        }
+        .into()
     }
 }
 
@@ -163,12 +177,20 @@ impl Details for Language {
     {
         vec![
             Self::Rust,
+            Self::Python,
+            Self::Shell,
             Self::Kotlin,
             Self::Java,
             Self::Javascript,
-            Self::Python,
-            Self::Shell,
         ]
+    }
+
+    fn years(&self) -> AttrValue {
+        match self {
+            Language::Rust | Language::Java | Language::Kotlin | Language::Python => "4",
+            Language::Javascript | Language::Shell => "3",
+        }
+        .into()
     }
 }
 
@@ -197,6 +219,15 @@ impl Details for Android {
         ]
         .to_vec()
     }
+
+    fn years(&self) -> AttrValue {
+        match self {
+            Android::JetpackCompose | Android::MaterialDesign => "4",
+            Android::Flutter => "2",
+            Android::NDK => "4",
+        }
+        .into()
+    }
 }
 impl Details for Desktop {
     fn img_src() -> AttrValue {
@@ -215,6 +246,14 @@ impl Details for Desktop {
         Self: Sized,
     {
         [Self::RustDesk, Self::Tauri].to_vec()
+    }
+
+    fn years(&self) -> AttrValue {
+        match self {
+            Desktop::Tauri => "1",
+            Desktop::RustDesk => "2",
+        }
+        .into()
     }
 }
 impl Details for Database {
@@ -235,6 +274,10 @@ impl Details for Database {
     {
         [Self::Sql, Self::Sqlite].to_vec()
     }
+
+    fn years(&self) -> AttrValue {
+        "2".into()
+    }
 }
 impl Details for Blockchain {
     fn img_src() -> AttrValue {
@@ -254,6 +297,14 @@ impl Details for Blockchain {
         Self: Sized,
     {
         vec![Self::Substrate, Self::Ink, Self::Solana, Self::Solidity]
+    }
+
+    fn years(&self) -> AttrValue {
+        match self {
+            Blockchain::Substrate | Blockchain::Solidity => "3",
+            Blockchain::Solana | Blockchain::Ink => "2",
+        }
+        .into()
     }
 }
 
@@ -276,6 +327,10 @@ impl Details for Network {
     {
         vec![Self::SSL, Self::TCP, Self::DNS]
     }
+
+    fn years(&self) -> AttrValue {
+        "3".into()
+    }
 }
 
 impl Details for DevOps {
@@ -296,5 +351,14 @@ impl Details for DevOps {
         Self: Sized,
     {
         [Self::Git, Self::Docker, Self::Bitbucket].to_vec()
+    }
+
+    fn years(&self) -> AttrValue {
+        match self {
+            DevOps::Git => "4",
+            DevOps::Docker => "2",
+            DevOps::Bitbucket => "4",
+        }
+        .into()
     }
 }
