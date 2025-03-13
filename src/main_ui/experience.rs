@@ -10,7 +10,7 @@ pub fn Experience() -> Html {
         <div class= "">
             <Header text = {"Experience"}/>
             <ul class="list-none space-y-5">
-                {for [ExperienceDetails::Upwork,ExperienceDetails::Medium,ExperienceDetails::Voiceban,ExperienceDetails::Assistant]
+                {for [ExperienceDetails::Github, ExperienceDetails::Medium,ExperienceDetails::Upwork,ExperienceDetails::Voiceban,ExperienceDetails::Assistant]
                     .map(|details| html!{
                         <li class="flex items-center justify-center">
                             <div class="size-2 bg-stone-950 rounded-full ml-5 mr-5 flex-none"/>
@@ -72,6 +72,7 @@ fn ExperienceItem(
 
 #[derive(Clone, Copy, Display, Debug)]
 enum ExperienceDetails {
+    Github,
     Voiceban,
     Medium,
     Upwork,
@@ -113,6 +114,12 @@ impl ExperienceDetails {
                 start: "Jan 2023".to_string(),
                 end: "Dec 2024".to_string(),
             },
+            ExperienceDetails::Github => DateTimeDetails {
+                start_datetime: "2020-12".to_string(),
+                end_datetime: Date::new_0().to_json().into(),
+                start: "Dec 2020".to_string(),
+                end: "Present".to_string(),
+            },
         }
     }
 
@@ -122,6 +129,7 @@ impl ExperienceDetails {
             ExperienceDetails::Medium => "https://cdn-icons-png.flaticon.com/512/5968/5968906.png",
             ExperienceDetails::Upwork => "assets/upwork.svg",
             ExperienceDetails::Assistant => "assets/wonders_co.jpeg",
+            ExperienceDetails::Github => "assets/github.svg",
         }
     }
 
@@ -131,6 +139,7 @@ impl ExperienceDetails {
             ExperienceDetails::Medium => "Writer",
             ExperienceDetails::Upwork => "Freelancer",
             ExperienceDetails::Assistant => "Coding Assistant",
+            ExperienceDetails::Github => "Contributor",
         }
     }
 
@@ -140,6 +149,7 @@ impl ExperienceDetails {
             ExperienceDetails::Medium => "Medium",
             ExperienceDetails::Upwork => "Upwork",
             ExperienceDetails::Assistant => "WondersCo",
+            ExperienceDetails::Github => "Github",
         }
     }
 
@@ -168,6 +178,11 @@ impl ExperienceDetails {
             projects. I contributed to coding, debugging, and documentation efforts, streamlining \
             project workflows and ensuring high-quality software delivery."
             }
+            ExperienceDetails::Github => {
+                "From 2020, I've contributed to numerous projects on Github such as gtk3-rs, \
+                Dushistov/flapigen-rs, paritytech/polkadot-sdk, wasm-bindgen, among others. Contributions \
+                include creating meaningful issues, submitting Pull Requests and suggesting fixes."
+            }
         }
     }
 
@@ -192,6 +207,9 @@ impl ExperienceDetails {
                 "https://www.upwork.com/freelancers/~0196d30a485de56f48?mp_source=share".into(),
             ),
             ExperienceDetails::Assistant => None,
+            ExperienceDetails::Github => {
+                Some("https://github.com/Kofituo?tab=overview&from=2020-12-01&to=2020-12-31".into())
+            }
         }
     }
 }
