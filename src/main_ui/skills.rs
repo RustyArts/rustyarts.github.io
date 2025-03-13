@@ -186,9 +186,10 @@ impl Details for Language {
     }
 
     fn years(&self) -> AttrValue {
-        match self {  Language::Java | Language::Kotlin | Language::Python => "4",
+        match self {
+            Language::Java | Language::Kotlin | Language::Python => "4",
             Language::Javascript | Language::Shell => "3",
-            Language::Rust => "5"
+            Language::Rust => "5",
         }
         .into()
     }
